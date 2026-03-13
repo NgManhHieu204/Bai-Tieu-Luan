@@ -1,0 +1,76 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+.matrix-container {
+  display: grid;
+  gap: 2px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.cell.header {
+  background-color: #333;
+  color: white;
+}
+
+/* Các trạng thái animation */
+.cell.trace-match {
+  background-color: #4caf50; /* Xanh lá: Trùng nhau */
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px #4caf50;
+  z-index: 10;
+}
+
+.cell.trace-path {
+  background-color: #ff9800; /* Cam: Đường đi */
+  color: white;
+}

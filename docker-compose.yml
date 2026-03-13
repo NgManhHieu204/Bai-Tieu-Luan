@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: lcs_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/app:/code/app
+    networks:
+      - lcs-network
+
+  frontend:
+    build: ./frontend
+    container_name: lcs_frontend
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on:
+      - backend
+    networks:
+      - lcs-network
+
+networks:
+  lcs-network:
+    driver: bridge
